@@ -169,6 +169,7 @@ object Application extends App{
 
   println(pf isDefinedAt(5))
   println(pf(2))
+
 }
 
 object SquareRoot extends PartialFunction[Int, Double] {
@@ -178,3 +179,16 @@ object SquareRoot extends PartialFunction[Int, Double] {
     throw new IllegalArgumentException("")
 }
 
+implicit class IntOps(i: Int){
+  def suared: Int = i * i
+  def cube = i * i * i
+}
+
+2.cube
+
+//Implicit parameter
+def mult(a: Int)(implicit b: Int = 1) = a * b
+
+//Implicit and type class
+trait XML[A]{
+}
